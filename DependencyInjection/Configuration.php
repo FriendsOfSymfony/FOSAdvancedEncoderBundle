@@ -1,6 +1,6 @@
 <?php
 
-namespace Stof\AdvancedEncoderBundle\DependencyInjection;
+namespace FOS\AdvancedEncoderBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
@@ -23,7 +23,7 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('stof_advanced_encoder');
+        $rootNode = $treeBuilder->root('fos_advanced_encoder');
 
         $rootNode
             ->fixXmlConfig('encoder')

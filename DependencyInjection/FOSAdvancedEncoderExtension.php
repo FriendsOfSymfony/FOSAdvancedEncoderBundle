@@ -1,6 +1,6 @@
 <?php
 
-namespace Stof\AdvancedEncoderBundle\DependencyInjection;
+namespace FOS\AdvancedEncoderBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -9,7 +9,7 @@ use Symfony\Component\DependencyInjection\Parameter;
 use Symfony\Component\DependencyInjection\Reference;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 
-class StofAdvancedEncoderBundleExtension extends Extension
+class FOSAdvancedEncoderBundleExtension extends Extension
 {
     public function load(array $configs, ContainerBuilder $container)
     {
@@ -24,7 +24,7 @@ class StofAdvancedEncoderBundleExtension extends Extension
             $encoders[$name] = $this->createEncoder($encoder);
         }
 
-        $container->getDefinition('stof_advanced_encoder.encoder_factory')->replaceArgument(1, $encoders);
+        $container->getDefinition('fos_advanced_encoder.encoder_factory')->replaceArgument(1, $encoders);
     }
 
     private function createEncoder($config)

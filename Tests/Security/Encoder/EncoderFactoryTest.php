@@ -1,9 +1,9 @@
 <?php
 
-namespace Stof\AdvancedEncoderBundle\Tests\Security\Encoder;
+namespace FOS\AdvancedEncoderBundle\Tests\Security\Encoder;
 
-use Stof\AdvancedEncoderBundle\Security\Encoder\EncoderAwareInterface;
-use Stof\AdvancedEncoderBundle\Security\Encoder\EncoderFactory;
+use FOS\AdvancedEncoderBundle\Security\Encoder\EncoderAwareInterface;
+use FOS\AdvancedEncoderBundle\Security\Encoder\EncoderFactory;
 use Symfony\Component\Security\Core\Encoder\MessageDigestPasswordEncoder;
 use Symfony\Component\Security\Core\User\UserInterface;
 
@@ -21,7 +21,7 @@ class EncoderFactoryTest extends \PHPUnit_Framework_TestCase
             'arguments' => array('sha512', true, 5),
         )));
 
-        $user = $this->getMock('Stof\AdvancedEncoderBundle\Tests\Security\Encoder\StubUserInterface');
+        $user = $this->getMock('FOS\AdvancedEncoderBundle\Tests\Security\Encoder\StubUserInterface');
         $user->expects($this->once())
             ->method('getEncoderName')
             ->will($this->returnValue('test'))
@@ -43,7 +43,7 @@ class EncoderFactoryTest extends \PHPUnit_Framework_TestCase
             'test' => $encoder,
         ));
 
-        $user = $this->getMock('Stof\AdvancedEncoderBundle\Tests\Security\Encoder\StubUserInterface');
+        $user = $this->getMock('FOS\AdvancedEncoderBundle\Tests\Security\Encoder\StubUserInterface');
         $user->expects($this->once())
             ->method('getEncoderName')
             ->will($this->returnValue('test'))
@@ -55,7 +55,7 @@ class EncoderFactoryTest extends \PHPUnit_Framework_TestCase
     public function testGetEncoderWithNullName()
     {
 
-        $user = $this->getMock('Stof\AdvancedEncoderBundle\Tests\Security\Encoder\StubUserInterface');
+        $user = $this->getMock('FOS\AdvancedEncoderBundle\Tests\Security\Encoder\StubUserInterface');
         $user->expects($this->once())
             ->method('getEncoderName')
             ->will($this->returnValue(null))
@@ -110,7 +110,7 @@ class EncoderFactoryTest extends \PHPUnit_Framework_TestCase
             'test' => $encoder,
         ));
 
-        $user = $this->getMock('Stof\AdvancedEncoderBundle\Tests\Security\Encoder\StubUserInterface');
+        $user = $this->getMock('FOS\AdvancedEncoderBundle\Tests\Security\Encoder\StubUserInterface');
         $user->expects($this->once())
             ->method('getEncoderName')
             ->will($this->returnValue('foo'))

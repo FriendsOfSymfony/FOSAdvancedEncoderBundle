@@ -1,6 +1,6 @@
 <?php
 
-namespace Stof\AdvancedEncoderBundle\Security\Encoder;
+namespace FOS\AdvancedEncoderBundle\Security\Encoder;
 
 use Symfony\Component\Security\Core\User\AdvancedUserInterface;
 

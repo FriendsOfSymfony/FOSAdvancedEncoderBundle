@@ -1,12 +1,12 @@
 <?php
 
-namespace Stof\AdvancedEncoderBundle;
+namespace FOS\AdvancedEncoderBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Stof\AdvancedEncoderBundle\DependencyInjection\Compiler\SecurityEncoderFactoryPass;
+use FOS\AdvancedEncoderBundle\DependencyInjection\Compiler\SecurityEncoderFactoryPass;
 
-class StofAdvancedEncoderBundle extends Bundle
+class FOSAdvancedEncoderBundle extends Bundle
 {
     public function build(ContainerBuilder $container)
     {

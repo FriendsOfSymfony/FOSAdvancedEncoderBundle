@@ -5,7 +5,7 @@
         <server name="SYMFONY" value="../../../symfony/src" />
     </php>
     <testsuites>
-        <testsuite name="StofAdvancedEncoderBundle">
+        <testsuite name="FOSAdvancedEncoderBundle">
             <directory suffix="Test.php">./Tests</directory>
         </testsuite>
     </testsuites>

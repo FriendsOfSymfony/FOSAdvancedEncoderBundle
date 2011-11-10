@@ -1,18 +1,18 @@
-StofAdvancedEncoderBundle
-=========================
+FOSAdvancedEncoderBundle
+========================
 
 ## Features
 
-The StofAdvancedEncoderBundle adds support for changing the encoder on an
+The FOSAdvancedEncoderBundle adds support for changing the encoder on an
 instance basis instead of using the same encoder for all instances of a class.
 
 ## Installation
 
 
-### Add StofAdvancedEncoderBundle to your vendor/bundles dir
+### Add FOSAdvancedEncoderBundle to your vendor/bundles dir
 
-Ultimately, the StofAdvancedEncoderBundle files should be downloaded to the
-`vendor/bundles/Stof/AdvancedEncoderBundle` directory.
+Ultimately, the FOSAdvancedEncoderBundle files should be downloaded to the
+`vendor/bundles/FOS/AdvancedEncoderBundle` directory.
 
 This can be done in several ways, depending on your preference. The first
 method is the standard Symfony2 method.
@@ -22,8 +22,8 @@ method is the standard Symfony2 method.
 Add the following lines in your `deps` file:
 
     [FOSUserBundle]
-        git=git://github.com/stof/StofAdvancedEncoderBundle.git
-        target=bundles/Stof/AdvancedEncoderBundle
+        git=git://github.com/friendsofsymfony/FOSAdvancedEncoderBundle.git
+        target=bundles/FOS/AdvancedEncoderBundle
 
 Now, run the vendors script to download the bundle:
 
@@ -33,24 +33,24 @@ Now, run the vendors script to download the bundle:
 
 If you prefer instead to use git submodules, the run the following:
 
-    git submodule add git://github.com/stof/StofAdvancedEncoderBundle.git vendor/bundles/Stof/AdvancedEncoderBundle
+    git submodule add git://github.com/friendsofsymfony/FOSAdvancedEncoderBundle.git vendor/bundles/FOS/AdvancedEncoderBundle
 
-### Register the Stof namespace
+### Register the FOS namespace
 
     // app/autoload.php
     $loader->registerNamespaces(array(
-        'Stof'  => __DIR__.'/../vendor/bundles',
+        'FOS'  => __DIR__.'/../vendor/bundles',
         // your other namespaces
     ));
 
-### Add StofAdvancedEncoderBundle to your application kernel
+### Add FOSAdvancedEncoderBundle to your application kernel
 
     // app/AppKernel.php
     public function registerBundles()
     {
         return array(
             // ...
-            new Stof\AdvancedEncoderBundle\StofAdvancedEncoderBundle(),
+            new FOS\AdvancedEncoderBundle\FOSAdvancedEncoderBundle(),
             // ...
         );
     }
@@ -62,7 +62,7 @@ the bundle. They are identified by a name used to reference them later. The
 configuration keys available are exactly the same than for the SecurityBundle
 encoder configuration.
 
-    stof_advanced_encoder:
+    fos_advanced_encoder:
         encoders:
             my_encoder:
                 algorithm: sha512
@@ -77,7 +77,7 @@ encoder configuration.
 
 ## Use the bundle
 
-You can now implement the `Stof\AdvancedEncoderBundle\Security\Encoder\EncoderAwareInterface`
+You can now implement the `FOS\AdvancedEncoderBundle\Security\Encoder\EncoderAwareInterface`
 interface in your User class. It consist of a single method `getEncoderName`
 returning the name of an encoder defined previously or `null`.
 
