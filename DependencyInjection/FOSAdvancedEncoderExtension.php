@@ -9,7 +9,7 @@ use Symfony\Component\DependencyInjection\Parameter;
 use Symfony\Component\DependencyInjection\Reference;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 
-class FOSAdvancedEncoderBundleExtension extends Extension
+class FOSAdvancedEncoderExtension extends Extension
 {
     public function load(array $configs, ContainerBuilder $container)
     {
