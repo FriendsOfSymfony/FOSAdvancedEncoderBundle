@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the FOSAdvancedEncoderBundle package.
+ *
+ * (c) FriendsOfSymfony <http://friendsofsymfony.github.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace FOS\AdvancedEncoderBundle\Tests\Security\Encoder;
 
 use FOS\AdvancedEncoderBundle\Security\Encoder\EncoderAwareInterface;
@@ -31,6 +40,52 @@ class EncoderFactoryTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($expectedEncoder, $factory->getEncoder($user));
     }
 
+    /**
+     * @expectedException InvalidArgumentException
+     */
+    public function testGetEncoderWithMissingClass()
+    {
+        $innerFactory = $this->getMock('Symfony\Component\Security\Core\Encoder\EncoderFactoryInterface');
+        $innerFactory->expects($this->never())
+            ->method('getEncoder')
+        ;
+
+        $factory = new EncoderFactory($innerFactory, array('test' => array(
+            'arguments' => array('sha512', true, 5),
+        )));
+
+        $user = $this->getMock('FOS\AdvancedEncoderBundle\Tests\Security\Encoder\StubUserInterface');
+        $user->expects($this->once())
+            ->method('getEncoderName')
+            ->will($this->returnValue('test'))
+        ;
+
+        $factory->getEncoder($user);
+    }
+
+    /**
+     * @expectedException InvalidArgumentException
+     */
+    public function testGetEncoderWithMissingArguments()
+    {
+        $innerFactory = $this->getMock('Symfony\Component\Security\Core\Encoder\EncoderFactoryInterface');
+        $innerFactory->expects($this->never())
+            ->method('getEncoder')
+        ;
+
+        $factory = new EncoderFactory($innerFactory, array('test' => array(
+            'class' => 'Symfony\Component\Security\Core\Encoder\MessageDigestPasswordEncoder',
+        )));
+
+        $user = $this->getMock('FOS\AdvancedEncoderBundle\Tests\Security\Encoder\StubUserInterface');
+        $user->expects($this->once())
+            ->method('getEncoderName')
+            ->will($this->returnValue('test'))
+        ;
+
+        $factory->getEncoder($user);
+    }
+
     public function testGetEncoderWithService()
     {
         $innerFactory = $this->getMock('Symfony\Component\Security\Core\Encoder\EncoderFactoryInterface');
@@ -54,7 +109,6 @@ class EncoderFactoryTest extends \PHPUnit_Framework_TestCase
 
     public function testGetEncoderWithNullName()
     {
-
         $user = $this->getMock('FOS\AdvancedEncoderBundle\Tests\Security\Encoder\StubUserInterface');
         $user->expects($this->once())
             ->method('getEncoderName')
@@ -66,7 +120,8 @@ class EncoderFactoryTest extends \PHPUnit_Framework_TestCase
         $innerFactory->expects($this->once())
             ->method('getEncoder')
             ->with($this->equalTo($user))
-            ->will($this->returnValue($encoder));
+            ->will($this->returnValue($encoder))
+        ;
 
         $factory = new EncoderFactory($innerFactory, array('test' => array(
             'class' => 'Symfony\Component\Security\Core\Encoder\MessageDigestPasswordEncoder',
@@ -85,7 +140,8 @@ class EncoderFactoryTest extends \PHPUnit_Framework_TestCase
         $innerFactory->expects($this->once())
             ->method('getEncoder')
             ->with($this->equalTo($user))
-            ->will($this->returnValue($encoder));
+            ->will($this->returnValue($encoder))
+        ;
 
         $factory = new EncoderFactory($innerFactory, array('test' => array(
             'class' => 'Symfony\Component\Security\Core\Encoder\MessageDigestPasswordEncoder',
