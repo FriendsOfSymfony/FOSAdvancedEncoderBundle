@@ -21,7 +21,7 @@ method is the standard Symfony2 method.
 
 Add the following lines in your `deps` file:
 
-    [FOSUserBundle]
+    [FOSAdvancedEncoderBundle]
         git=git://github.com/friendsofsymfony/FOSAdvancedEncoderBundle.git
         target=bundles/FOS/AdvancedEncoderBundle
 
