@@ -22,7 +22,7 @@ method is the standard Symfony2 method.
 Add the following lines in your `deps` file:
 
     [FOSAdvancedEncoderBundle]
-        git=git://github.com/friendsofsymfony/FOSAdvancedEncoderBundle.git
+        git=git://github.com/FriendsOfSymfony/FOSAdvancedEncoderBundle.git
         target=bundles/FOS/AdvancedEncoderBundle
 
 Now, run the vendors script to download the bundle:
