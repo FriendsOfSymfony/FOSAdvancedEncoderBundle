@@ -13,7 +13,6 @@ namespace FOS\AdvancedEncoderBundle\Security\Encoder;
 
 use Symfony\Component\Security\Core\Encoder\EncoderFactoryInterface;
 use Symfony\Component\Security\Core\Encoder\PasswordEncoderInterface;
-use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @author Christophe Coevoet <stof@notk.org>
@@ -35,7 +34,7 @@ class EncoderFactory implements EncoderFactoryInterface
         $this->encoders = $encoders;
     }
 
-    public function getEncoder(UserInterface $user)
+    public function getEncoder($user)
     {
         if (!$user instanceof EncoderAwareInterface) {
             return $this->genericFactory->getEncoder($user);
