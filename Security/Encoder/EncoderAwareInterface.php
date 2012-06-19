@@ -11,8 +11,6 @@
 
 namespace FOS\AdvancedEncoderBundle\Security\Encoder;
 
-use Symfony\Component\Security\Core\User\AdvancedUserInterface;
-
 /**
  * @author Christophe Coevoet <stof@notk.org>
  */
@@ -26,5 +24,5 @@ interface EncoderAwareInterface
      *
      * @return string
      */
-    function getEncoderName();
+    public function getEncoderName();
 }

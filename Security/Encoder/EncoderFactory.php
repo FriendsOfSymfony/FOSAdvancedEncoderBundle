@@ -25,8 +25,8 @@ class EncoderFactory implements EncoderFactoryInterface
     /**
      * Constructor.
      *
-     * @param \Symfony\Component\Security\Core\Encoder\EncoderFactoryInterface $genericFactory
-     * @param array $encoders
+     * @param EncoderFactoryInterface $genericFactory
+     * @param array                   $encoders
      */
     public function __construct(EncoderFactoryInterface $genericFactory, array $encoders)
     {
@@ -60,8 +60,8 @@ class EncoderFactory implements EncoderFactoryInterface
     /**
      * Creates an encoder for the given algorithm.
      *
-     * @param array $config
-     * @return \Symfony\Component\Security\Core\Encoder\PasswordEncoderInterface
+     * @param  array                    $config
+     * @return PasswordEncoderInterface
      */
     protected function createEncoder(array $config)
     {
