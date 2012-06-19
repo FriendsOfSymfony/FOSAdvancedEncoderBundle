@@ -1,4 +1,4 @@
 phpunit.xml
-Tests/autoload.php
-
-vendor/symfony
+vendor/
+composer.lock
+composer.phar
