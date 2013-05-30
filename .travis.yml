@@ -4,9 +4,17 @@ php:
     - 5.3
     - 5.4
 
+env:
+  - SYMFONY_VERSION=2.1.*
+  - SYMFONY_VERSION=2.2.*
+  - SYMFONY_VERSION=dev-master
+
 before_script:
-    - curl -s http://getcomposer.org/installer | php
-    - php composer.phar install --dev
+    - composer require symfony/framework-bundle:${SYMFONY_VERSION} --no-update
+    - composer require symfony/security-bundle:${SYMFONY_VERSION} --no-update
+    - composer update --dev
+
+script: phpunit --coverage-text
 
 notifications:
     email:
