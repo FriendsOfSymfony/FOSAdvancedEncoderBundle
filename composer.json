@@ -4,6 +4,7 @@
     "description": "Symfony2 bundle adding a way to specify the encoder on a user instance basis",
     "keywords": ["Symfony2", "security", "encoder"],
     "homepage": "https://github.com/friendsofsymfony/FOSAdvancedEncoderBundle",
+    "minimum-stability": "dev",
     "license": "MIT",
     "authors": [
         {
@@ -13,8 +14,8 @@
     ],
     "require": {
         "php": ">=5.3.2",
-        "symfony/framework-bundle": ">=2.1,<2.3-dev",
-        "symfony/security-bundle": ">=2.1,<2.3-dev"
+        "symfony/framework-bundle" : "~2.1",
+        "symfony/security-bundle": "~2.1"
     },
     "autoload": {
         "psr-0": { "FOS\\AdvancedEncoderBundle": "" }
