@@ -43,6 +43,10 @@ class FOSAdvancedEncoderExtensionTest extends \PHPUnit_Framework_TestCase
                 'custom' => array(
                     'id' => 'acme_demo.encoder',
                 ),
+                'bcrypt' => array(
+                    'algorithm' => 'bcrypt',
+                    'cost'      => 16,
+                ),
             ),
         );
         $loader->load(array($config), $container);
@@ -65,6 +69,10 @@ class FOSAdvancedEncoderExtensionTest extends \PHPUnit_Framework_TestCase
                         'arguments' => array(false),
                     ),
                     'custom' => new Reference('acme_demo.encoder'),
+                    'bcrypt' => array(
+                        'class' => new Parameter('security.encoder.bcrypt.class'),
+                        'arguments' => array(new Reference('security.secure_random'), 16),
+                    ),
                 )
             )
         );
