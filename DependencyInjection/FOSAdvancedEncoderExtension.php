@@ -55,7 +55,7 @@ class FOSAdvancedEncoderExtension extends Extension
 
         // bcrypt encoder
         if ('bcrypt' === $config['algorithm']) {
-            $arguments = array(new Reference('security.secure_random'), $config['cost']);
+            $arguments = array($config['cost']);
 
             return array(
                 'class' => new Parameter('security.encoder.bcrypt.class'),

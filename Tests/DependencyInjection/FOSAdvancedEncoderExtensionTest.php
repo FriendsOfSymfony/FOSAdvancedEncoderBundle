@@ -71,7 +71,7 @@ class FOSAdvancedEncoderExtensionTest extends \PHPUnit_Framework_TestCase
                     'custom' => new Reference('acme_demo.encoder'),
                     'bcrypt' => array(
                         'class' => new Parameter('security.encoder.bcrypt.class'),
-                        'arguments' => array(new Reference('security.secure_random'), 16),
+                        'arguments' => array(16),
                     ),
                 )
             )
