@@ -16,6 +16,9 @@
         "symfony/framework-bundle": "~2.1",
         "symfony/security-bundle": "~2.1"
     },
+    "conflict": {
+        "symfony/security": "~2.5"
+    },
     "autoload": {
         "psr-0": { "FOS\\AdvancedEncoderBundle": "" }
     },
