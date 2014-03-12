@@ -51,6 +51,8 @@ class Configuration implements ConfigurationInterface
                             ->booleanNode('ignore_case')->defaultFalse()->end()
                             ->booleanNode('encode_as_base64')->defaultTrue()->end()
                             ->scalarNode('iterations')->defaultValue(5000)->end()
+                            ->scalarNode('hash_algorithm')->defaultValue('sha512')->end()
+                            ->scalarNode('key_length')->defaultValue(40)->end()
                             ->scalarNode('id')->end()
                         ->end()
                     ->end()
