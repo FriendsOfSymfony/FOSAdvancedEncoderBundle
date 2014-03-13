@@ -16,6 +16,11 @@
         "symfony/framework-bundle": "~2.1",
         "symfony/security-bundle": "~2.1"
     },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.1.x-dev"
+        }
+    },
     "autoload": {
         "psr-0": { "FOS\\AdvancedEncoderBundle": "" }
     },
