@@ -44,7 +44,7 @@ class Configuration implements ConfigurationInterface
                         ->performNoDeepMerging()
                         ->beforeNormalization()
                             ->ifString()
-                            ->then(function($v) { return array('algorithm' => $v); })
+                            ->then(function ($v) { return array('algorithm' => $v); })
                         ->end()
                         ->children()
                             ->scalarNode('algorithm')->cannotBeEmpty()->end()

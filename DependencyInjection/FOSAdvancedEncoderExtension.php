@@ -77,7 +77,7 @@ class FOSAdvancedEncoderExtension extends Extension
                 'arguments' => $arguments,
             );
         }
-        
+
         // message digest encoder
         $arguments = array(
             $config['algorithm'],
