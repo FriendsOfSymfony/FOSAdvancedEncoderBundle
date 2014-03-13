@@ -53,6 +53,31 @@ class FOSAdvancedEncoderExtension extends Extension
             );
         }
 
+        // bcrypt encoder
+        if ('bcrypt' === $config['algorithm']) {
+            $arguments = array($config['cost']);
+
+            return array(
+                'class' => new Parameter('security.encoder.bcrypt.class'),
+                'arguments' => $arguments,
+            );
+        }
+
+        // pbkdf2 encoder
+        if ('pbkdf2' === $config['algorithm']) {
+            $arguments = array(
+                $config['hash_algorithm'],
+                $config['encode_as_base64'],
+                $config['iterations'],
+                $config['key_length'],
+            );
+
+            return array(
+                'class'     => new Parameter('security.encoder.pbkdf2.class'),
+                'arguments' => $arguments,
+            );
+        }
+        
         // message digest encoder
         $arguments = array(
             $config['algorithm'],

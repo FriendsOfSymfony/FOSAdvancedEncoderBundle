@@ -43,6 +43,17 @@ class FOSAdvancedEncoderExtensionTest extends \PHPUnit_Framework_TestCase
                 'custom' => array(
                     'id' => 'acme_demo.encoder',
                 ),
+                'bcrypt' => array(
+                    'algorithm' => 'bcrypt',
+                    'cost'      => 16,
+                ),
+                'pbkdf2' => array(
+                    'algorithm' => 'pbkdf2',
+                    'hash_algorithm' => 'sha512',
+                    'encode_as_base64' => false,
+                    'iterations' => 2,
+                    'key_length' => 40,
+                ),
             ),
         );
         $loader->load(array($config), $container);
@@ -65,6 +76,14 @@ class FOSAdvancedEncoderExtensionTest extends \PHPUnit_Framework_TestCase
                         'arguments' => array(false),
                     ),
                     'custom' => new Reference('acme_demo.encoder'),
+                    'bcrypt' => array(
+                        'class' => new Parameter('security.encoder.bcrypt.class'),
+                        'arguments' => array(16),
+                    ),
+                    'pbkdf2' => array(
+                        'class' => new Parameter('security.encoder.pbkdf2.class'),
+                        'arguments' => array('sha512', false, 2, 40),
+                    ),
                 )
             )
         );
