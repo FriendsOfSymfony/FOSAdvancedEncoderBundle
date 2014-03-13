@@ -5,6 +5,8 @@ The FOSAdvancedEncoderBundle adds support for changing the encoder on an
 instance basis instead of using the same encoder for all instances of a class.
 
 [![Build Status](https://secure.travis-ci.org/FriendsOfSymfony/FOSAdvancedEncoderBundle.png?branch=master)](http://travis-ci.org/FriendsOfSymfony/FOSAdvancedEncoderBundle)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/FriendsOfSymfony/FOSAdvancedEncoderBundle/badges/quality-score.png?s=dccf1912b87c5739d73100a09997fcf3204f551b)](https://scrutinizer-ci.com/g/FriendsOfSymfony/FOSAdvancedEncoderBundle/)
+[![Code Coverage](https://scrutinizer-ci.com/g/FriendsOfSymfony/FOSAdvancedEncoderBundle/badges/coverage.png?s=27e29c5ea428937a7527343676ccc304281b049f)](https://scrutinizer-ci.com/g/FriendsOfSymfony/FOSAdvancedEncoderBundle/)
 
 Documentation
 -------------
