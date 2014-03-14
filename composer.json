@@ -22,7 +22,6 @@
         }
     },
     "autoload": {
-        "psr-0": { "FOS\\AdvancedEncoderBundle": "" }
-    },
-    "target-dir": "FOS/AdvancedEncoderBundle"
+        "psr-4": { "FOS\\AdvancedEncoderBundle\\": "" }
+    }
 }
